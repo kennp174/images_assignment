@@ -14,10 +14,9 @@ var img;
 function preload(){
 	//STEP 2:
 	// Load your image with loadImage("path/to/image.jpg")
-	//bubbles = loadImage('images/bubbles.jpg');
-	blurImage = loadImage('images/bubbles.jpg');
-	girl = loadImage('images/girl.png');
-	love = loadImage('images/love.png');
+	background = loadImage('images/background.jpg');
+	cloud = loadImage('images/cloud.png');
+	rain = loadImage('images/rain.png');
 	//and save it to your global variable:
 }
 
@@ -27,8 +26,8 @@ function setup() {
 	uploadButton =createFileInput(imageUploaded);
 	//STEP 4:
   //set up your canvas with createCanvas(__,__);
-	createCanvas(blurImage.width,blurImage.height);
-	blurImage.filter(BLUR,5);
+	createCanvas(background.width,background.height);
+	//blurImage.filter(BLUR,5);
 }
 function imageUploaded(file){
 	//img= loadImage(file.data, drawMyImage);
@@ -42,14 +41,14 @@ function drawMyImage(){
 function draw() {
 	//clear();
 
-	image(blurImage,0,0, blurImage.width, blurImage.height);
+	image(background,0,0, background.width, background.height);
 
 	imageMode(CENTER);
 
 	if(mouseIsPressed){
-		image(love, mouseX, mouseY, love.width, love.height);
+		image(rain, mouseX, mouseY, 236, 220);
 	} else {
-			image(girl, mouseX, mouseY, girl.width, girl.height);
+			image(cloud, mouseX, mouseY, 236, 180);
 	}
 	//STEP 5:
 	//draw your images with image(imagevariable);
